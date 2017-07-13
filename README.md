@@ -1,2 +1,2 @@
 # Examples
-simple alert dialog with list
+This "Examples" Project for beginners to learn Android.
