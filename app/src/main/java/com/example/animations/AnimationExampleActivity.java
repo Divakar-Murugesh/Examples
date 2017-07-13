@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.example.R;
 
-public class AnimatioExampleActivity extends AppCompatActivity {
+public class AnimationExampleActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
