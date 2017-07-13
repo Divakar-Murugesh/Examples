@@ -7,6 +7,14 @@
     android:orientation="vertical"
     tools:context="com.example.animations.AnimationExampleActivity">
 
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Hiding..."
+        android:textAllCaps="false" />
+
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
@@ -15,10 +23,19 @@
         android:text="Hello World!" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="@string/app_name" />
+        android:text="Add sub view with \n transition"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Activity change with \n transition"
+        android:textAllCaps="false" />
 
 </LinearLayout>
