@@ -3,8 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Examples.iml" filepath="$PROJECT_DIR$/Examples.iml" />
-      <module fileurl="file://$PROJECT_DIR$/animations/animations.iml" filepath="$PROJECT_DIR$/animations/animations.iml" />
-      <module fileurl="file://$PROJECT_DIR$/simple_alert_dialog_with_list/simple_alert_dialog_with_list.iml" filepath="$PROJECT_DIR$/simple_alert_dialog_with_list/simple_alert_dialog_with_list.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
 </project>
