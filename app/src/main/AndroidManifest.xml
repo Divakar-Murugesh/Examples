@@ -18,7 +18,9 @@
         </activity>
         <activity android:name=".animations.AnimationExampleActivity" />
         <activity android:name=".simple_alert_dialog_with_list.SimpleAlertDialogActivity" />
-        <activity android:name=".animations.SecondActivity"></activity>
+        <activity android:name=".animations.SecondActivity" />
+        <activity android:name=".animations.FirstImageActivity" />
+        <activity android:name=".animations.SecondImageActivity"></activity>
     </application>
 
 </manifest>
