@@ -20,7 +20,8 @@
         <activity android:name=".simple_alert_dialog_with_list.SimpleAlertDialogActivity" />
         <activity android:name=".animations.SecondActivity" />
         <activity android:name=".animations.FirstImageActivity" />
-        <activity android:name=".animations.SecondImageActivity"></activity>
+        <activity android:name=".animations.SecondImageActivity" />
+        <activity android:name=".data_passing_between_single_activity_to_multiple_fragments.TempActivity"></activity>
     </application>
 
 </manifest>
