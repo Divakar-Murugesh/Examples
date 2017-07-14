@@ -26,8 +26,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Array of strings...
-        String[] strings = {"Animations", "Simple Alert dialog with ListView", "Data passing between single activity to multiple fragments", "permission"};
+        String[] strings = {
+                "Animations",
+                "Simple Alert dialog with ListView",
+                "Data passing between single activity to multiple fragments",
+                "permission"
+        };
 
         ListView listView1 = (ListView) findViewById(R.id.listView1);
 
@@ -40,20 +44,31 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
                 if (position == 0) {
+
                     startActivity(new Intent(MainActivity.this, AnimationExampleActivity.class));
+
                 } else if (position == 1) {
+
                     startActivity(new Intent(MainActivity.this, SimpleAlertDialogActivity.class));
+
                 } else if (position == 2) {
+
                     startActivity(new Intent(MainActivity.this, TempActivity.class));
-                } else {
+
+                } else if (position == 3) {
 
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+
                         ActivityCompat.requestPermissions(MainActivity.this, new String[]{android.Manifest.permission.ACCESS_COARSE_LOCATION, android.Manifest.permission.ACCESS_FINE_LOCATION,}, PERMISSIONS_CODE);
+
                     } else {
+
                         // You can do you operation directly. If you added permissions in AndroidManifest...
                         // Or visit following link to read about permission check.
                         // https://stackoverflow.com/questions/7203668/how-permission-can-be-checked-at-runtime-without-throwing-securityexception
+
                     }
+
                 }
 
             }
@@ -64,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode) {
             case PERMISSIONS_CODE:
-                if (grantResults.length > 0 && grantResults[grantResults.length-1] == PackageManager.PERMISSION_GRANTED) {
+                if (grantResults.length > 0 && grantResults[grantResults.length - 1] == PackageManager.PERMISSION_GRANTED) {
                     Log.d("permission", "accepted");
                 } else {
                     Log.d("permission", "denied");
