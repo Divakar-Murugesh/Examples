@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.animations.AnimationExampleActivity;
+import com.example.async.AsyncGet;
 import com.example.data_passing_between_single_activity_to_multiple_fragments.TempActivity;
 import com.example.simple_alert_dialog_with_list.SimpleAlertDialogActivity;
 
@@ -30,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
                 "Animations",
                 "Simple Alert dialog with ListView",
                 "Data passing between single activity to multiple fragments",
-                "permission"
+                "permission",
+                "Async task"
         };
 
         ListView listView1 = (ListView) findViewById(R.id.listView1);
@@ -68,6 +70,15 @@ public class MainActivity extends AppCompatActivity {
                         // https://stackoverflow.com/questions/7203668/how-permission-can-be-checked-at-runtime-without-throwing-securityexception
 
                     }
+
+                } else if (position == 4) {
+
+                    new AsyncGet(new AsyncGet.AsyncGetResponse() {
+                        @Override
+                        public void processFinish(String result) {
+                            // process result from Async task.
+                        }
+                    }).execute();
 
                 }
 
