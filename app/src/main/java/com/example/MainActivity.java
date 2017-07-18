@@ -16,6 +16,7 @@ import android.widget.ListView;
 import com.example.animations.AnimationExampleActivity;
 import com.example.async.AsyncGet;
 import com.example.data_passing_between_single_activity_to_multiple_fragments.TempActivity;
+import com.example.kotlin.KotlinActivityOne;
 import com.example.simple_alert_dialog_with_list.SimpleAlertDialogActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
                 "Simple Alert dialog with ListView",
                 "Data passing between single activity to multiple fragments",
                 "permission",
-                "Async task"
+                "Async task",
+                "kotlin activity example for data passing with intent"
         };
 
         ListView listView1 = (ListView) findViewById(R.id.listView1);
@@ -79,6 +81,10 @@ public class MainActivity extends AppCompatActivity {
                             // process result from Async task.
                         }
                     }).execute();
+
+                } else if (position == 5) {
+
+                    startActivity(new Intent(MainActivity.this, KotlinActivityOne.class));
 
                 }
 

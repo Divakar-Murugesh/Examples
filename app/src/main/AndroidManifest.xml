@@ -23,7 +23,9 @@
         <activity android:name=".animations.SecondActivity" />
         <activity android:name=".animations.FirstImageActivity" />
         <activity android:name=".animations.SecondImageActivity" />
-        <activity android:name=".data_passing_between_single_activity_to_multiple_fragments.TempActivity"></activity>
+        <activity android:name=".data_passing_between_single_activity_to_multiple_fragments.TempActivity" />
+        <activity android:name=".kotlin.KotlinActivityOne" />
+        <activity android:name=".kotlin.KotlinActivityTwo"></activity>
     </application>
 
 </manifest>
