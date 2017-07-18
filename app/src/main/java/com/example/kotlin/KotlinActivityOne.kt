@@ -3,9 +3,8 @@ package com.example.kotlin
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.widget.Button
-import android.widget.EditText
 import com.example.R
+import kotlinx.android.synthetic.main.activity_kotlin_one.*
 
 class KotlinActivityOne : AppCompatActivity() {
 
@@ -13,12 +12,9 @@ class KotlinActivityOne : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kotlin_one)
 
-        val button = findViewById(R.id.buttonPassValues) as Button
-        val editText = findViewById(R.id.editText1) as EditText
-
-        button.setOnClickListener { view ->
+        buttonPassValues.setOnClickListener { view ->
             val intent = Intent(this, KotlinActivityTwo::class.java)
-            intent.putExtra("KEY", editText.text.toString())
+            intent.putExtra("KEY", editText1.text.toString())
             startActivity(intent)
         }
     }

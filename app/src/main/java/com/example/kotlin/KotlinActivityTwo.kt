@@ -2,8 +2,8 @@ package com.example.kotlin
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.widget.TextView
 import com.example.R
+import kotlinx.android.synthetic.main.activity_kotlin_two.*
 
 class KotlinActivityTwo : AppCompatActivity() {
 
@@ -13,7 +13,6 @@ class KotlinActivityTwo : AppCompatActivity() {
 
         val value: String = intent.getStringExtra("KEY")
 
-        val textView = findViewById(R.id.textView1) as TextView
-        textView.text = value
+        textView1.text = value
     }
 }
