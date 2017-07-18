@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 "Data passing between single activity to multiple fragments",
                 "permission",
                 "Async task",
-                "kotlin activity example for data passing with intent"
+                "kotlin for data passing with intent"
         };
 
         ListView listView1 = (ListView) findViewById(R.id.listView1);
