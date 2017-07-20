@@ -14,4 +14,12 @@
         android:layout_height="150dp"
         app:vector_src="@drawable/search_back_vector" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="Click search icon to view VectorMasterView sample"
+        android:textSize="20sp" />
+
 </LinearLayout>
