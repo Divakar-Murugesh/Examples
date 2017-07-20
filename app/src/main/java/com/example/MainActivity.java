@@ -12,11 +12,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.animations.AnimationExampleActivity;
 import com.example.async.AsyncGet;
 import com.example.data_passing_between_single_activity_to_multiple_fragments.TempActivity;
-import com.example.kotlin.KotlinActivityOne;
+import com.example.kotlin.SplashActivity;
 import com.example.simple_alert_dialog_with_list.SimpleAlertDialogActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -79,12 +80,13 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void processFinish(String result) {
                             // process result from Async task.
+                            Toast.makeText(MainActivity.this, "Completed!!!", Toast.LENGTH_SHORT).show();
                         }
                     }).execute();
 
                 } else if (position == 5) {
 
-                    startActivity(new Intent(MainActivity.this, KotlinActivityOne.class));
+                    startActivity(new Intent(MainActivity.this, SplashActivity.class));
 
                 }
 

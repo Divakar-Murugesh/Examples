@@ -25,7 +25,10 @@
         <activity android:name=".animations.SecondImageActivity" />
         <activity android:name=".data_passing_between_single_activity_to_multiple_fragments.TempActivity" />
         <activity android:name=".kotlin.KotlinActivityOne" />
-        <activity android:name=".kotlin.KotlinActivityTwo"></activity>
+        <activity android:name=".kotlin.KotlinActivityTwo" />
+        <activity
+            android:name=".kotlin.SplashActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

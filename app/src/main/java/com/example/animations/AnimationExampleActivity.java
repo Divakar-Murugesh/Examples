@@ -8,8 +8,6 @@ import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -83,8 +81,7 @@ public class AnimationExampleActivity extends AppCompatActivity {
                     System.out.println(aniView.getAlpha());
                     dest = 0;
                 }
-                ObjectAnimator animation1 = ObjectAnimator.ofFloat(aniView,
-                        "rotation", dest);
+                ObjectAnimator animation1 = ObjectAnimator.ofFloat(aniView, "rotation", dest);
                 animation1.setDuration(2000);
                 animation1.start();
                 // Show how to load an animation from XML
@@ -99,14 +96,12 @@ public class AnimationExampleActivity extends AppCompatActivity {
                 // also use an Interpolator (BounceInterpolator)
                 Paint paint = new Paint();
                 TextView aniTextView = (TextView) findViewById(R.id.textView1);
-                float measureTextCenter = paint.measureText(aniTextView.getText()
-                        .toString());
+                float measureTextCenter = paint.measureText(aniTextView.getText().toString());
                 dest = 0 - measureTextCenter;
                 if (aniTextView.getX() < 0) {
                     dest = 0;
                 }
-                ObjectAnimator animation2 = ObjectAnimator.ofFloat(aniTextView,
-                        "x", dest);
+                ObjectAnimator animation2 = ObjectAnimator.ofFloat(aniTextView, "x", dest);
                 animation2.setDuration(2000);
                 animation2.start();
                 break;
@@ -118,22 +113,18 @@ public class AnimationExampleActivity extends AppCompatActivity {
                 if (aniView.getAlpha() > 0) {
                     dest = 0;
                 }
-                ObjectAnimator animation3 = ObjectAnimator.ofFloat(aniView,
-                        "alpha", dest);
+                ObjectAnimator animation3 = ObjectAnimator.ofFloat(aniView, "alpha", dest);
                 animation3.setDuration(2000);
                 animation3.start();
                 break;
 
             case R.id.Button04:
 
-                ObjectAnimator fadeOut = ObjectAnimator.ofFloat(aniView, "alpha",
-                        0f);
+                ObjectAnimator fadeOut = ObjectAnimator.ofFloat(aniView, "alpha", 0f);
                 fadeOut.setDuration(2000);
-                ObjectAnimator mover = ObjectAnimator.ofFloat(aniView,
-                        "translationX", -500f, 0f);
+                ObjectAnimator mover = ObjectAnimator.ofFloat(aniView, "translationX", -500f, 0f);
                 mover.setDuration(2000);
-                ObjectAnimator fadeIn = ObjectAnimator.ofFloat(aniView, "alpha",
-                        0f, 1f);
+                ObjectAnimator fadeIn = ObjectAnimator.ofFloat(aniView, "alpha", 0f, 1f);
                 fadeIn.setDuration(2000);
                 AnimatorSet animatorSet = new AnimatorSet();
 
@@ -145,18 +136,5 @@ public class AnimationExampleActivity extends AppCompatActivity {
                 break;
         }
 
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.mymenu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent = new Intent(this, SecondActivity.class);
-        startActivity(intent);
-        return true;
     }
 }
