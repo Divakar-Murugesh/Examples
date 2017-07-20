@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 alertDialog.setTitle("Android UI Controls in this page");
                 alertDialog.setMessage("" +
                         "1. RelativeLayout\n" +
-                        "2. TextView\n" +
+                        "2. Button\n" +
                         "3. ListView\n" +
                         "Now you are seen all the above items in AlertDialog." +
                         "");

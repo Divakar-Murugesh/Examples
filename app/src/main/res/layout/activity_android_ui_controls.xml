@@ -3,9 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
     tools:context="com.example.activities.AndroidUIControlsActivity">
+
+    <Button
+        android:id="@+id/button_pageDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:text="Click to see Android UI Controls in this page"
+        android:textAllCaps="false" />
 
     <TextView
         android:layout_width="wrap_content"
