@@ -1,4 +1,4 @@
-package com.example.simple_alert_dialog_with_list;
+package com.example.models;
 
 public class NotificationModel {
 

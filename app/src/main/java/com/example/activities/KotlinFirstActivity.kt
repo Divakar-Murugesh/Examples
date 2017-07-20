@@ -1,4 +1,4 @@
-package com.example.kotlin
+package com.example.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,10 +7,10 @@ import android.support.v7.app.AppCompatActivity
 import com.example.R
 import com.sdsmdg.harjot.vectormaster.VectorMasterView
 import com.sdsmdg.harjot.vectormaster.models.PathModel
+import kotlinx.android.synthetic.main.activity_kotlin_first.*
 import java.util.*
 
-
-class SearchToBackAnimationActivity : AppCompatActivity() {
+class KotlinFirstActivity : AppCompatActivity() {
 
     var searchBackState = 0
     var circleTrimEnd = 1f
@@ -27,7 +27,7 @@ class SearchToBackAnimationActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_search_to_back_animation)
+        setContentView(R.layout.activity_kotlin_first)
 
         vectorMasterView = findViewById(R.id.vector_view) as VectorMasterView
 
@@ -44,9 +44,15 @@ class SearchToBackAnimationActivity : AppCompatActivity() {
         }
 
         Handler().postDelayed({
-            startActivity(Intent(this@SearchToBackAnimationActivity, KotlinActivityOne::class.java))
+            startActivity(Intent(this@KotlinFirstActivity, KotlinFirstActivity::class.java))
             finish()
         }, 10000)
+
+        buttonPassValues.setOnClickListener { view ->
+            val intent = Intent(this, KotlinSecondActivity::class.java)
+            intent.putExtra("KEY", editText1.text.toString())
+            startActivity(intent)
+        }
     }
 
     fun animateSearchToBack() {
@@ -106,4 +112,5 @@ class SearchToBackAnimationActivity : AppCompatActivity() {
         }, 0, 1000 / 60)
 
     }
+
 }

@@ -1,4 +1,4 @@
-package com.example
+package com.example.activities
 
 import android.content.Intent
 import android.graphics.Color
@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
+import com.example.R
 import com.sdsmdg.harjot.vectormaster.VectorMasterView
 import java.util.*
 

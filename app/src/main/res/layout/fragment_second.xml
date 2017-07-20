@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/holo_blue_dark"
-    tools:context="com.example.data_passing_between_single_activity_to_multiple_fragments.SecondFragment">
+    tools:context="com.example.fragments.SecondFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

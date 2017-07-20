@@ -1,4 +1,4 @@
-package com.example.animations;
+package com.example.activities;
 
 import android.animation.AnimatorSet;
 import android.animation.LayoutTransition;

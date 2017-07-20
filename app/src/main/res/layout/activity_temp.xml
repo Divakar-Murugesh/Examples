@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.data_passing_between_single_activity_to_multiple_fragments.TempActivity">
+    tools:context="com.example.activities.TempActivity">
 
     <Spinner
         android:id="@+id/spinner1"

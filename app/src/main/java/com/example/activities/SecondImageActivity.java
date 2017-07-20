@@ -1,4 +1,4 @@
-package com.example.animations;
+package com.example.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

@@ -1,4 +1,4 @@
-package com.example.data_passing_between_single_activity_to_multiple_fragments;
+package com.example.activities;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -9,6 +9,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import com.example.R;
+import com.example.adapters.FragmentAdapter;
+import com.example.interfaces.FragmentCommunicator;
+import com.example.fragments.FirstFragment;
+import com.example.fragments.SecondFragment;
+import com.example.fragments.ThirdFragment;
 
 import java.util.ArrayList;
 import java.util.List;

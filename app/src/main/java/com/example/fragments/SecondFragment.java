@@ -1,5 +1,4 @@
-package com.example.data_passing_between_single_activity_to_multiple_fragments;
-
+package com.example.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,15 +8,17 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.R;
+import com.example.interfaces.FragmentCommunicator;
+import com.example.activities.TempActivity;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ThirdFragment extends Fragment implements FragmentCommunicator {
+public class SecondFragment extends Fragment implements FragmentCommunicator {
 
     private TextView textView1;
 
-    public ThirdFragment() {
+    public SecondFragment() {
         // Required empty public constructor
     }
 
@@ -26,7 +27,7 @@ public class ThirdFragment extends Fragment implements FragmentCommunicator {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_third, container, false);
+        View view = inflater.inflate(R.layout.fragment_second, container, false);
 
         textView1 = (TextView) view.findViewById(R.id.textView1);
 

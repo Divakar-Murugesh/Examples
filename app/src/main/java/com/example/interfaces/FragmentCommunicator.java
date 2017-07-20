@@ -1,4 +1,4 @@
-package com.example.data_passing_between_single_activity_to_multiple_fragments;
+package com.example.interfaces;
 
 public interface FragmentCommunicator {
 

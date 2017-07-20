@@ -1,4 +1,4 @@
-package com.example.simple_alert_dialog_with_list;
+package com.example.adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.R;
+import com.example.models.NotificationModel;
 
 import java.util.List;
 

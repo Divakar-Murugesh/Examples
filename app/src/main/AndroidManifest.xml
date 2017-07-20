@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SplashActivity"
+            android:name=".activities.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,18 +20,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".animations.AnimationExampleActivity" />
-        <activity android:name=".simple_alert_dialog_with_list.SimpleAlertDialogActivity" />
-        <activity android:name=".animations.SecondActivity" />
-        <activity android:name=".animations.FirstImageActivity" />
-        <activity android:name=".animations.SecondImageActivity" />
-        <activity android:name=".data_passing_between_single_activity_to_multiple_fragments.TempActivity" />
-        <activity android:name=".kotlin.KotlinActivityOne" />
-        <activity android:name=".kotlin.KotlinActivityTwo" />
-        <activity
-            android:name=".kotlin.SearchToBackAnimationActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activities.MainActivity" />
+        <activity android:name=".activities.AnimationExampleActivity" />
+        <activity android:name=".activities.SecondActivity" />
+        <activity android:name=".activities.FirstImageActivity" />
+        <activity android:name=".activities.SecondImageActivity" />
+        <activity android:name=".activities.TempActivity" />
+        <activity android:name=".activities.KotlinFirstActivity" />
+        <activity android:name=".activities.KotlinSecondActivity" />
+        <activity android:name=".activities.AndroidUIControlsActivity"></activity>
     </application>
 
 </manifest>
