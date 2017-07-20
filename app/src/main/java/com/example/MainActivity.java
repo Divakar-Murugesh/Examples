@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -17,7 +16,7 @@ import android.widget.Toast;
 import com.example.animations.AnimationExampleActivity;
 import com.example.async.AsyncGet;
 import com.example.data_passing_between_single_activity_to_multiple_fragments.TempActivity;
-import com.example.kotlin.SplashActivity;
+import com.example.kotlin.SearchToBackAnimationActivity;
 import com.example.simple_alert_dialog_with_list.SimpleAlertDialogActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -68,7 +67,8 @@ public class MainActivity extends AppCompatActivity {
 
                     } else {
 
-                        // You can do you operation directly. If you added permissions in AndroidManifest...
+                        Toast.makeText(MainActivity.this,"This device is lower version. So you can do your operation directly. If you added permissions in AndroidManifest...",Toast.LENGTH_LONG).show();
+                        // This device is lower version. So you can do your operation directly. If you added permissions in AndroidManifest...
                         // Or visit following link to read about permission check.
                         // https://stackoverflow.com/questions/7203668/how-permission-can-be-checked-at-runtime-without-throwing-securityexception
 
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
                 } else if (position == 5) {
 
-                    startActivity(new Intent(MainActivity.this, SplashActivity.class));
+                    startActivity(new Intent(MainActivity.this, SearchToBackAnimationActivity.class));
 
                 }
 
@@ -99,9 +99,9 @@ public class MainActivity extends AppCompatActivity {
         switch (requestCode) {
             case PERMISSIONS_CODE:
                 if (grantResults.length > 0 && grantResults[grantResults.length - 1] == PackageManager.PERMISSION_GRANTED) {
-                    Log.d("permission", "accepted");
+                    Toast.makeText(MainActivity.this,"permission accepted",Toast.LENGTH_LONG).show();
                 } else {
-                    Log.d("permission", "denied");
+                    Toast.makeText(MainActivity.this,"permission denied",Toast.LENGTH_LONG).show();
                 }
                 break;
             default:

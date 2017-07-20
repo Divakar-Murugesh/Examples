@@ -10,7 +10,7 @@ import com.sdsmdg.harjot.vectormaster.models.PathModel
 import java.util.*
 
 
-class SplashActivity : AppCompatActivity() {
+class SearchToBackAnimationActivity : AppCompatActivity() {
 
     var searchBackState = 0
     var circleTrimEnd = 1f
@@ -27,7 +27,7 @@ class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
+        setContentView(R.layout.activity_search_to_back_animation)
 
         vectorMasterView = findViewById(R.id.vector_view) as VectorMasterView
 
@@ -44,7 +44,7 @@ class SplashActivity : AppCompatActivity() {
         }
 
         Handler().postDelayed({
-            startActivity(Intent(this@SplashActivity, KotlinActivityOne::class.java))
+            startActivity(Intent(this@SearchToBackAnimationActivity, KotlinActivityOne::class.java))
             finish()
         }, 10000)
     }

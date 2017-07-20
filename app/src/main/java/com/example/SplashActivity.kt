@@ -51,7 +51,7 @@ class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash2)
+        setContentView(R.layout.activity_splash)
 
         typeface = Typeface.createFromAsset(assets, "fonts/adequate.ttf")
         text = findViewById(R.id.text) as TextView

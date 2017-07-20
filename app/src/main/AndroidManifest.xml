@@ -30,7 +30,7 @@
         <activity android:name=".kotlin.KotlinActivityOne" />
         <activity android:name=".kotlin.KotlinActivityTwo" />
         <activity
-            android:name=".kotlin.SplashActivity"
+            android:name=".kotlin.SearchToBackAnimationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
