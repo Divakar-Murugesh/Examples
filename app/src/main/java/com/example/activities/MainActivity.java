@@ -17,7 +17,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.R;
-import com.example.adapters.NotificationListAdapter;
+import com.example.adapters.ListViewAdapter;
 import com.example.interfaces.AsyncTaskResponseHandler;
 import com.example.models.NotificationModel;
 import com.example.utils.AsyncTaskSample;
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
                     AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
                     alertDialogBuilder.setTitle("Awesome alert")
                             .setCancelable(false)
-                            .setAdapter(new NotificationListAdapter(MainActivity.this, notificationModels), new DialogInterface.OnClickListener() {
+                            .setAdapter(new ListViewAdapter(MainActivity.this, notificationModels), new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int position) {
 
                                     // on item click...
