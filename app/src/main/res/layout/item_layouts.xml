@@ -233,10 +233,13 @@
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
-                android:layout_margin="4dp"
+                android:layout_marginTop="46dp"
+                android:layout_toRightOf="@+id/buttonR3"
                 android:gravity="center"
                 android:text="RelativeLayout-Sample"
                 android:textSize="20sp" />
@@ -245,6 +248,7 @@
                 android:id="@+id/buttonR1"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
+                android:layout_alignParentTop="true"
                 android:layout_below="@+id/textView"
                 android:layout_margin="4dp"
                 android:background="#2196F3" />
@@ -253,31 +257,33 @@
                 android:id="@+id/buttonR2"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
-                android:layout_below="@+id/buttonR1"
-                android:layout_margin="4dp"
+                android:layout_alignLeft="@+id/buttonR1"
+                android:layout_alignStart="@+id/buttonR1"
+                android:layout_alignTop="@+id/buttonR1"
+                android:layout_marginLeft="30dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="23dp"
                 android:background="#673AB7" />
 
             <Button
                 android:id="@+id/buttonR3"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
-                android:layout_below="@+id/buttonR2"
-                android:layout_margin="4dp"
+                android:layout_below="@+id/buttonR1"
+                android:layout_toEndOf="@+id/buttonR1"
+                android:layout_toRightOf="@+id/buttonR1"
                 android:background="#2196F3" />
 
             <Button
                 android:id="@+id/buttonR4"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
-                android:layout_below="@+id/buttonR3"
-                android:layout_margin="4dp"
+                android:layout_below="@+id/buttonR2"
+                android:layout_toEndOf="@+id/buttonR2"
+                android:layout_toRightOf="@+id/buttonR2"
                 android:background="#673AB7" />
 
         </RelativeLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="200dp" />
 
     </LinearLayout>
 
