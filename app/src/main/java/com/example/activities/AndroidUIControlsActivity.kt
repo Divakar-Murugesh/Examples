@@ -33,5 +33,4 @@ class AndroidUIControlsActivity : AppCompatActivity() {
         expandableListView.setAdapter(ExpandableListViewAdapter(this@AndroidUIControlsActivity, modelList))
     }
 
-
 }
