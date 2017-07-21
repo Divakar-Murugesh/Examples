@@ -9,17 +9,17 @@ import android.widget.BaseAdapter
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.example.R
-import com.example.models.NotificationModel
+import com.example.models.SampleDataModel
 
 
-class ListViewAdapter(private val mContext: Context, private val notificationModels: List<NotificationModel>) : BaseAdapter() {
+class ListViewAdapter(private val mContext: Context, private val sampleDataModels: List<SampleDataModel>) : BaseAdapter() {
 
     override fun getCount(): Int {
-        return notificationModels.size
+        return sampleDataModels.size
     }
 
-    override fun getItem(i: Int): NotificationModel {
-        return notificationModels[i]
+    override fun getItem(i: Int): SampleDataModel {
+        return sampleDataModels[i]
     }
 
     override fun getItemId(i: Int): Long {

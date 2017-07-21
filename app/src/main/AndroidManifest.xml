@@ -25,7 +25,6 @@
         <activity android:name=".activities.SecondActivity" />
         <activity android:name=".activities.FirstImageActivity" />
         <activity android:name=".activities.SecondImageActivity" />
-        <activity android:name=".activities.KotlinFirstActivity" />
         <activity android:name=".activities.KotlinSecondActivity" />
         <activity android:name=".activities.AndroidUIControlsActivity" />
         <activity android:name=".activities.FragmentsActivity" />

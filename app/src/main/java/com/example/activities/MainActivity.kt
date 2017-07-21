@@ -11,7 +11,7 @@ import android.widget.*
 import com.example.R
 import com.example.adapters.ListViewAdapter
 import com.example.interfaces.AsyncTaskResponseHandler
-import com.example.models.NotificationModel
+import com.example.models.SampleDataModel
 import com.example.utils.AsyncTaskSample
 import java.util.*
 
@@ -69,20 +69,20 @@ class MainActivity : AppCompatActivity() {
             } else if (position == 2) {
 
                 // Here I add static data...
-                val notificationModels = ArrayList<NotificationModel>()
+                val models = ArrayList<SampleDataModel>()
 
-                notificationModels.add(NotificationModel(1, "ONE", "12 July 2017 06:30 PM"))
-                notificationModels.add(NotificationModel(2, "TWO", "12 July 2017 06:30 PM"))
-                notificationModels.add(NotificationModel(3, "THREE", "12 July 2017 06:30 PM"))
-                notificationModels.add(NotificationModel(4, "FOUR", "12 July 2017 06:30 PM"))
-                notificationModels.add(NotificationModel(5, "FIVE", "12 July 2017 06:30 PM"))
-                notificationModels.add(NotificationModel(6, "SIX", "12 July 2017 06:30 PM"))
-                notificationModels.add(NotificationModel(7, "SEVEN", "12 July 2017 06:30 PM"))
+                models.add(SampleDataModel(1, "ONE", "12 July 2017 06:30 PM"))
+                models.add(SampleDataModel(2, "TWO", "12 July 2017 06:30 PM"))
+                models.add(SampleDataModel(3, "THREE", "12 July 2017 06:30 PM"))
+                models.add(SampleDataModel(4, "FOUR", "12 July 2017 06:30 PM"))
+                models.add(SampleDataModel(5, "FIVE", "12 July 2017 06:30 PM"))
+                models.add(SampleDataModel(6, "SIX", "12 July 2017 06:30 PM"))
+                models.add(SampleDataModel(7, "SEVEN", "12 July 2017 06:30 PM"))
 
                 val alertDialogBuilder = AlertDialog.Builder(this@MainActivity)
                 alertDialogBuilder.setTitle("Awesome alert")
                         .setCancelable(false)
-                        .setAdapter(ListViewAdapter(this@MainActivity, notificationModels)) { dialog, position ->
+                        .setAdapter(ListViewAdapter(this@MainActivity, models)) { dialog, position ->
                             // on item click...
                             Toast.makeText(this@MainActivity, "You performed ListView item click event at index position : " + position, Toast.LENGTH_LONG).show()
                             dialog.cancel()
@@ -121,7 +121,26 @@ class MainActivity : AppCompatActivity() {
 
             } else if (position == 6) {
 
-                startActivity(Intent(this@MainActivity, KotlinFirstActivity::class.java))
+                // Here I add static data...
+                val models = ArrayList<SampleDataModel>()
+
+                models.add(SampleDataModel(1, "ONE", "12 July 2017 06:30 PM"))
+                models.add(SampleDataModel(2, "TWO", "12 July 2017 06:30 PM"))
+                models.add(SampleDataModel(3, "THREE", "12 July 2017 06:30 PM"))
+
+                val alertDialogBuilder = AlertDialog.Builder(this@MainActivity)
+                alertDialogBuilder.setTitle("Select Item")
+                        .setCancelable(false)
+                        .setAdapter(ListViewAdapter(this@MainActivity, models)) { dialog, position ->
+                            // on item click...
+                            val intent = Intent(this@MainActivity, KotlinSecondActivity::class.java)
+                            intent.putExtra("KEY", models.get(position).notificationText)
+                            startActivity(intent)
+                            dialog.cancel()
+                        }
+                        .setPositiveButton("Close") { dialog, id -> dialog.cancel() }
+                val alertDialog = alertDialogBuilder.create()
+                alertDialog.show()
 
             }
         }
