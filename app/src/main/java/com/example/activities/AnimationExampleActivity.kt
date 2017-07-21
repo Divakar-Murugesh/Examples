@@ -7,16 +7,16 @@ import android.app.ActivityOptions
 import android.content.Intent
 import android.graphics.Paint
 import android.os.Bundle
+import android.os.Handler
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
+import android.widget.*
 import com.example.R
 import com.sdsmdg.harjot.vectormaster.VectorMasterView
 import com.sdsmdg.harjot.vectormaster.models.PathModel
 import java.util.*
+
+
 
 
 class AnimationExampleActivity : AppCompatActivity() {
@@ -54,8 +54,9 @@ class AnimationExampleActivity : AppCompatActivity() {
 
         val l = LayoutTransition()
         l.enableTransitionType(LayoutTransition.CHANGING)
-        val linearLayout1 = findViewById(R.id.layout1) as LinearLayout
-        linearLayout1.layoutTransition = l
+        val scrollView = findViewById(R.id.scrollView) as ScrollView
+        val linearLayout = findViewById(R.id.linearLayout) as LinearLayout
+        linearLayout.layoutTransition = l
 
         val textView1 = findViewById(R.id.textView1) as TextView
         val button1 = findViewById(R.id.button1) as Button
@@ -69,16 +70,41 @@ class AnimationExampleActivity : AppCompatActivity() {
             // End Action
             button1.animate().alpha(0f).withEndAction {
                 // Remove view from parent layout
-                linearLayout1.removeView(button1)
+                linearLayout.removeView(button1)
             }
         }
 
-        button2.setOnClickListener { linearLayout1.addView(Button(this@AnimationExampleActivity)) }
+        button2.setOnClickListener { view ->
+            val newButton = Button(this@AnimationExampleActivity)
+            newButton.text = "Button Added"
+            linearLayout.addView(newButton)
+
+            Handler().postDelayed({
+                scrollView.fullScroll(ScrollView.FOCUS_DOWN)
+            }, 500)
+        }
 
         button3.setOnClickListener { view ->
             val intent = Intent(this@AnimationExampleActivity, SecondActivity::class.java)
             val options = ActivityOptions.makeScaleUpAnimation(view, 0, 0, view.width, view.height)
             startActivity(intent, options.toBundle())
+        }
+
+        val sharedImage = findViewById(R.id.imageView1) as ImageView
+        sharedImage.setOnClickListener { view ->
+            //This is where the magic happens.
+            // makeSceneTransitionAnimation takes a context, view,
+            // a name for the target view.
+            var options: ActivityOptions? = null
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                options = ActivityOptions.makeSceneTransitionAnimation(this@AnimationExampleActivity, sharedImage, "sharedImage")
+            }
+            val intent = Intent(this@AnimationExampleActivity, SecondImageActivity::class.java)
+            if (options != null) {
+                startActivity(intent, options.toBundle())
+            } else {
+                startActivity(intent)
+            }
         }
 
     }

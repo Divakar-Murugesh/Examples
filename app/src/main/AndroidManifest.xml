@@ -23,7 +23,6 @@
         <activity android:name=".activities.MainActivity" />
         <activity android:name=".activities.AnimationExampleActivity" />
         <activity android:name=".activities.SecondActivity" />
-        <activity android:name=".activities.FirstImageActivity" />
         <activity android:name=".activities.SecondImageActivity" />
         <activity android:name=".activities.KotlinSecondActivity" />
         <activity android:name=".activities.AndroidUIControlsActivity" />

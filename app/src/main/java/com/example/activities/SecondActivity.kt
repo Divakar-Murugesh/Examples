@@ -4,7 +4,6 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
-import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -47,8 +46,6 @@ class SecondActivity : AppCompatActivity() {
         val string = button!!.text.toString()
         val hitTarget = Integer.valueOf(string)!! + 1
         button!!.text = hitTarget.toString()
-
-        startActivity(Intent(this@SecondActivity, FirstImageActivity::class.java))
     }
 
     private fun createAnimation(): AnimatorSet {
