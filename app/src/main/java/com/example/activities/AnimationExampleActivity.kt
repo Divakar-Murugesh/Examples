@@ -1,8 +1,6 @@
 package com.example.activities
 
-import android.animation.AnimatorSet
-import android.animation.LayoutTransition
-import android.animation.ObjectAnimator
+import android.animation.*
 import android.app.ActivityOptions
 import android.content.Intent
 import android.graphics.Paint
@@ -21,6 +19,12 @@ import java.util.*
 
 class AnimationExampleActivity : AppCompatActivity() {
 
+    private var animation1: ObjectAnimator? = null
+    private var animation2: ObjectAnimator? = null
+    private var button: Button? = null
+    private var random: Random? = null
+    private var set: AnimatorSet? = null
+
     var searchBackState = 0
     var circleTrimEnd = 1f
     var stemTrimStart = 0f
@@ -36,7 +40,25 @@ class AnimationExampleActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_animation)
+        setContentView(R.layout.activity_animation_example)
+
+        random = Random()
+
+        set = createAnimation()
+        set!!.start()
+        set!!.addListener(object : AnimatorListenerAdapter() {
+
+            override fun onAnimationEnd(animation: Animator) {
+                val nextX: Float = random!!.nextInt(500).toFloat()
+                val nextY: Float = random!!.nextInt(500).toFloat()
+                animation1 = ObjectAnimator.ofFloat(button, "x", button!!.x, nextX)
+                animation1!!.duration = 1400
+                animation2 = ObjectAnimator.ofFloat(button, "y", button!!.y, nextY)
+                animation2!!.duration = 1400
+                set!!.playTogether(animation1, animation2)
+                set!!.start()
+            }
+        })
 
         vectorMasterView = findViewById(R.id.vector_view) as VectorMasterView
 
@@ -61,7 +83,6 @@ class AnimationExampleActivity : AppCompatActivity() {
         val textView1 = findViewById(R.id.textView1) as TextView
         val button1 = findViewById(R.id.button1) as Button
         val button2 = findViewById(R.id.button2) as Button
-        val button3 = findViewById(R.id.button3) as Button
 
         // Start Action
         button1.animate().translationX(350f).setDuration(1000).withStartAction {
@@ -84,12 +105,6 @@ class AnimationExampleActivity : AppCompatActivity() {
             }, 500)
         }
 
-        button3.setOnClickListener { view ->
-            val intent = Intent(this@AnimationExampleActivity, SecondActivity::class.java)
-            val options = ActivityOptions.makeScaleUpAnimation(view, 0, 0, view.width, view.height)
-            startActivity(intent, options.toBundle())
-        }
-
         val sharedImage = findViewById(R.id.imageView1) as ImageView
         sharedImage.setOnClickListener { view ->
             //This is where the magic happens.
@@ -99,7 +114,7 @@ class AnimationExampleActivity : AppCompatActivity() {
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
                 options = ActivityOptions.makeSceneTransitionAnimation(this@AnimationExampleActivity, sharedImage, "sharedImage")
             }
-            val intent = Intent(this@AnimationExampleActivity, SecondImageActivity::class.java)
+            val intent = Intent(this@AnimationExampleActivity, ImagePreviewActivity::class.java)
             if (options != null) {
                 startActivity(intent, options.toBundle())
             } else {
@@ -107,6 +122,25 @@ class AnimationExampleActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    fun onClick(view: View) {
+        val string = button!!.text.toString()
+        val hitTarget = Integer.valueOf(string)!! + 1
+        button!!.text = hitTarget.toString()
+    }
+
+    private fun createAnimation(): AnimatorSet {
+        val nextX: Float = random!!.nextInt(500).toFloat()
+        val nextY: Float = random!!.nextInt(500).toFloat()
+        button = findViewById(R.id.button) as Button
+        animation1 = ObjectAnimator.ofFloat(button, "x", nextX)
+        animation1!!.duration = 1400
+        animation2 = ObjectAnimator.ofFloat(button, "y", nextY)
+        animation2!!.duration = 1400
+        val set = AnimatorSet()
+        set.playTogether(animation1, animation2)
+        return set
     }
 
     fun animateSearchToBack() {

@@ -1,5 +1,6 @@
 package com.example.activities
 
+import android.app.ActivityOptions
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
@@ -53,18 +54,22 @@ class MainActivity : AppCompatActivity() {
 
         val listView1 = findViewById(R.id.listView1) as ListView
 
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, strings)
+        val adapter = ArrayAdapter(this@MainActivity, android.R.layout.simple_list_item_1, strings)
 
         listView1.adapter = adapter
 
         listView1.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, position, l ->
             if (position == 0) {
 
-                startActivity(Intent(this@MainActivity, AndroidUIControlsActivity::class.java))
+                val intent = Intent(this@MainActivity, AndroidUIControlsActivity::class.java)
+                val options = ActivityOptions.makeScaleUpAnimation(view, 0, 0, view.width, view.height)
+                startActivity(intent, options.toBundle())
 
             } else if (position == 1) {
 
-                startActivity(Intent(this@MainActivity, AnimationExampleActivity::class.java))
+                val intent = Intent(this@MainActivity, AnimationExampleActivity::class.java)
+                val options = ActivityOptions.makeScaleUpAnimation(view, 0, 0, view.width, view.height)
+                startActivity(intent, options.toBundle())
 
             } else if (position == 2) {
 
@@ -93,7 +98,9 @@ class MainActivity : AppCompatActivity() {
 
             } else if (position == 3) {
 
-                startActivity(Intent(this@MainActivity, FragmentsActivity::class.java))
+                val intent = Intent(this@MainActivity, FragmentsActivity::class.java)
+                val options = ActivityOptions.makeScaleUpAnimation(view, 0, 0, view.width, view.height)
+                startActivity(intent, options.toBundle())
 
             } else if (position == 4) {
 
@@ -103,7 +110,7 @@ class MainActivity : AppCompatActivity() {
 
                 } else {
 
-                    Toast.makeText(this@MainActivity, "This device is lower version. So you can do your operation directly. If you added permissions in AndroidManifest...", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@MainActivity, "This device is lower version. So you can do your operation directly If you added permissions in AndroidManifest.", Toast.LENGTH_LONG).show()
                     // This device is lower version. So you can do your operation directly. If you added permissions in AndroidManifest...
                     // Or visit following link to read about permission check.
                     // https://stackoverflow.com/questions/7203668/how-permission-can-be-checked-at-runtime-without-throwing-securityexception
@@ -133,9 +140,10 @@ class MainActivity : AppCompatActivity() {
                         .setCancelable(false)
                         .setAdapter(ListViewAdapter(this@MainActivity, models)) { dialog, position ->
                             // on item click...
-                            val intent = Intent(this@MainActivity, KotlinSecondActivity::class.java)
+                            val intent = Intent(this@MainActivity, ImagePreviewActivity::class.java)
                             intent.putExtra("KEY", models.get(position).notificationText)
-                            startActivity(intent)
+                            val options = ActivityOptions.makeScaleUpAnimation(view, 0, 0, view.width, view.height)
+                            startActivity(intent, options.toBundle())
                             dialog.cancel()
                         }
                         .setPositiveButton("Close") { dialog, id -> dialog.cancel() }
