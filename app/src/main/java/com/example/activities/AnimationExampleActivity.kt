@@ -15,28 +15,26 @@ import com.sdsmdg.harjot.vectormaster.models.PathModel
 import java.util.*
 
 
-
-
 class AnimationExampleActivity : AppCompatActivity() {
 
-    private var animation1: ObjectAnimator? = null
-    private var animation2: ObjectAnimator? = null
-    private var button: Button? = null
-    private var random: Random? = null
-    private var set: AnimatorSet? = null
+    private lateinit var animation1: ObjectAnimator
+    private lateinit var animation2: ObjectAnimator
+    private lateinit var button: Button
+    private lateinit var random: Random
+    private lateinit var set: AnimatorSet
 
-    var searchBackState = 0
-    var circleTrimEnd = 1f
-    var stemTrimStart = 0f
-    var stemTrimEnd = 0.185f
-    var arrowHeadBottomTrimEnd = 0f
-    var arrowHeadTopTrimEnd = 0f
+    private var searchBackState = 0
+    private var circleTrimEnd = 1f
+    private var stemTrimStart = 0f
+    private var stemTrimEnd = 0.185f
+    private var arrowHeadBottomTrimEnd = 0f
+    private var arrowHeadTopTrimEnd = 0f
 
-    lateinit var vectorMasterView: VectorMasterView
-    lateinit var searchCircle: PathModel
-    lateinit var stem: PathModel
-    lateinit var arrowUp: PathModel
-    lateinit var arrowDown: PathModel
+    private lateinit var vectorMasterView: VectorMasterView
+    private lateinit var searchCircle: PathModel
+    private lateinit var stem: PathModel
+    private lateinit var arrowUp: PathModel
+    private lateinit var arrowDown: PathModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,18 +43,18 @@ class AnimationExampleActivity : AppCompatActivity() {
         random = Random()
 
         set = createAnimation()
-        set!!.start()
-        set!!.addListener(object : AnimatorListenerAdapter() {
+        set.start()
+        set.addListener(object : AnimatorListenerAdapter() {
 
             override fun onAnimationEnd(animation: Animator) {
-                val nextX: Float = random!!.nextInt(500).toFloat()
-                val nextY: Float = random!!.nextInt(500).toFloat()
-                animation1 = ObjectAnimator.ofFloat(button, "x", button!!.x, nextX)
-                animation1!!.duration = 1400
-                animation2 = ObjectAnimator.ofFloat(button, "y", button!!.y, nextY)
-                animation2!!.duration = 1400
-                set!!.playTogether(animation1, animation2)
-                set!!.start()
+                val nextX: Float = random.nextInt(500).toFloat()
+                val nextY: Float = random.nextInt(150).toFloat()
+                animation1 = ObjectAnimator.ofFloat(button, "x", button.x, nextX)
+                animation1.duration = 1400
+                animation2 = ObjectAnimator.ofFloat(button, "y", button.y, nextY)
+                animation2.duration = 1400
+                set.playTogether(animation1, animation2)
+                set.start()
             }
         })
 
@@ -66,7 +64,7 @@ class AnimationExampleActivity : AppCompatActivity() {
         stem = vectorMasterView.getPathModelByName("stem")
         arrowUp = vectorMasterView.getPathModelByName("arrow_head_top")
         arrowDown = vectorMasterView.getPathModelByName("arrow_head_bottom")
-        vectorMasterView.setOnClickListener { view ->
+        vectorMasterView.setOnClickListener { _ ->
             if (searchBackState == 0) {
                 animateSearchToBack()
             } else {
@@ -95,7 +93,7 @@ class AnimationExampleActivity : AppCompatActivity() {
             }
         }
 
-        button2.setOnClickListener { view ->
+        button2.setOnClickListener { _ ->
             val newButton = Button(this@AnimationExampleActivity)
             newButton.text = "Button Added"
             linearLayout.addView(newButton)
@@ -106,7 +104,7 @@ class AnimationExampleActivity : AppCompatActivity() {
         }
 
         val sharedImage = findViewById(R.id.imageView1) as ImageView
-        sharedImage.setOnClickListener { view ->
+        sharedImage.setOnClickListener { _ ->
             //This is where the magic happens.
             // makeSceneTransitionAnimation takes a context, view,
             // a name for the target view.
@@ -125,19 +123,19 @@ class AnimationExampleActivity : AppCompatActivity() {
     }
 
     fun onClick(view: View) {
-        val string = button!!.text.toString()
+        val string = (view as Button).text.toString()
         val hitTarget = Integer.valueOf(string)!! + 1
-        button!!.text = hitTarget.toString()
+        view.text = hitTarget.toString()
     }
 
     private fun createAnimation(): AnimatorSet {
-        val nextX: Float = random!!.nextInt(500).toFloat()
-        val nextY: Float = random!!.nextInt(500).toFloat()
+        val nextX: Float = random.nextInt(500).toFloat()
+        val nextY: Float = random.nextInt(150).toFloat()
         button = findViewById(R.id.button) as Button
         animation1 = ObjectAnimator.ofFloat(button, "x", nextX)
-        animation1!!.duration = 1400
+        animation1.duration = 1400
         animation2 = ObjectAnimator.ofFloat(button, "y", nextY)
-        animation2!!.duration = 1400
+        animation2.duration = 1400
         val set = AnimatorSet()
         set.playTogether(animation1, animation2)
         return set
@@ -159,11 +157,11 @@ class AnimationExampleActivity : AppCompatActivity() {
                     cancel()
                 }
 
-                searchCircle.setTrimPathEnd(circleTrimEnd)
-                stem.setTrimPathEnd(stemTrimEnd)
-                stem.setTrimPathStart(stemTrimStart)
-                arrowUp.setTrimPathEnd(arrowHeadTopTrimEnd)
-                arrowDown.setTrimPathEnd(arrowHeadBottomTrimEnd)
+                searchCircle.trimPathEnd = circleTrimEnd
+                stem.trimPathEnd = stemTrimEnd
+                stem.trimPathStart = stemTrimStart
+                arrowUp.trimPathEnd = arrowHeadTopTrimEnd
+                arrowDown.trimPathEnd = arrowHeadBottomTrimEnd
 
                 runOnUiThread { vectorMasterView.update() }
 
@@ -188,11 +186,11 @@ class AnimationExampleActivity : AppCompatActivity() {
                     cancel()
                 }
 
-                searchCircle.setTrimPathEnd(circleTrimEnd)
-                stem.setTrimPathEnd(stemTrimEnd)
-                stem.setTrimPathStart(stemTrimStart)
-                arrowUp.setTrimPathEnd(arrowHeadTopTrimEnd)
-                arrowDown.setTrimPathEnd(arrowHeadBottomTrimEnd)
+                searchCircle.trimPathEnd = circleTrimEnd
+                stem.trimPathEnd = stemTrimEnd
+                stem.trimPathStart = stemTrimStart
+                arrowUp.trimPathEnd = arrowHeadTopTrimEnd
+                arrowDown.trimPathEnd = arrowHeadBottomTrimEnd
 
                 runOnUiThread { vectorMasterView.update() }
 
@@ -202,7 +200,7 @@ class AnimationExampleActivity : AppCompatActivity() {
     }
 
     fun startAnimation(view: View) {
-        var dest = 0f
+        var dest: Float
         val aniView = findViewById(R.id.imageView1) as ImageView
         when (view.id) {
 
