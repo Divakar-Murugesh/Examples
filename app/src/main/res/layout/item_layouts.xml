@@ -226,6 +226,59 @@
 
         </LinearLayout>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_margin="4dp"
+                android:gravity="center"
+                android:text="RelativeLayout-Sample"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/buttonR1"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_below="@+id/textView"
+                android:layout_margin="4dp"
+                android:background="#2196F3" />
+
+            <Button
+                android:id="@+id/buttonR2"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_below="@+id/buttonR1"
+                android:layout_margin="4dp"
+                android:background="#673AB7" />
+
+            <Button
+                android:id="@+id/buttonR3"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_below="@+id/buttonR2"
+                android:layout_margin="4dp"
+                android:background="#2196F3" />
+
+            <Button
+                android:id="@+id/buttonR4"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_below="@+id/buttonR3"
+                android:layout_margin="4dp"
+                android:background="#673AB7" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
     </LinearLayout>
 
 </ScrollView>
