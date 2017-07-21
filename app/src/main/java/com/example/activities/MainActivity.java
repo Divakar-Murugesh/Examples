@@ -73,8 +73,8 @@ public class MainActivity extends AppCompatActivity {
                 "Android UI Controls",
                 "Animations",
                 "Simple Alert dialog with ListView",
-                "Data passing between single activity to multiple fragments",
-                "permission",
+                "Data change listener for Activity with multiple fragments",
+                "Requesting Permissions at Run Time",
                 "Async task",
                 "Data passing with intent in \"kotlin\""
         };

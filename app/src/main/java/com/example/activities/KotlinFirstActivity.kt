@@ -2,7 +2,6 @@ package com.example.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
 import android.support.v7.app.AppCompatActivity
 import com.example.R
 import com.sdsmdg.harjot.vectormaster.VectorMasterView
@@ -42,11 +41,6 @@ class KotlinFirstActivity : AppCompatActivity() {
                 animateBackToSearch()
             }
         }
-
-        Handler().postDelayed({
-            startActivity(Intent(this@KotlinFirstActivity, KotlinFirstActivity::class.java))
-            finish()
-        }, 10000)
 
         buttonPassValues.setOnClickListener { view ->
             val intent = Intent(this, KotlinSecondActivity::class.java)

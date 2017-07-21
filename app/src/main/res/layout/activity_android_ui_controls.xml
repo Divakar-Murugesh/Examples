@@ -16,9 +16,9 @@
         android:text="Click to see Android UI Controls in this page"
         android:textAllCaps="false" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="I will update repository soon..."
-        android:textSize="20sp" />
+    <ExpandableListView
+        android:id="@+id/expandableListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </LinearLayout>
