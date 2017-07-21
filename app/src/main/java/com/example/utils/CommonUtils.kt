@@ -1,7 +1,8 @@
 package com.example.utils
 
+class CommonUtils {
 
-object CommonUtils {
+    companion object {
 
-
+    }
 }

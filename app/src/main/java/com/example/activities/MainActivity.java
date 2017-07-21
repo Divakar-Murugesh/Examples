@@ -18,8 +18,11 @@ import android.widget.Toast;
 
 import com.example.R;
 import com.example.adapters.NotificationListAdapter;
+import com.example.interfaces.AsyncTaskResponseHandler;
 import com.example.models.NotificationModel;
-import com.example.utils.AsyncGet;
+import com.example.utils.AsyncTaskSample;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -76,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 "Data change listener for Activity with multiple fragments",
                 "Requesting Permissions at Run Time",
                 "Async task",
-                "Data passing with intent in \"kotlin\""
+                "Data passing with Intent"
         };
 
         ListView listView1 = (ListView) findViewById(R.id.listView1);
@@ -133,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
 
                 } else if (position == 3) {
 
-                    startActivity(new Intent(MainActivity.this, TempActivity.class));
+                    startActivity(new Intent(MainActivity.this, FragmentsActivity.class));
 
                 } else if (position == 4) {
 
@@ -152,9 +155,9 @@ public class MainActivity extends AppCompatActivity {
 
                 } else if (position == 5) {
 
-                    new AsyncGet(new AsyncGet.AsyncGetResponse() {
+                    new AsyncTaskSample(new AsyncTaskResponseHandler() {
                         @Override
-                        public void processFinish(String result) {
+                        public void processFinish(@NotNull String result) {
                             // process result from Async task.
                             Toast.makeText(MainActivity.this, "Completed!!!", Toast.LENGTH_SHORT).show();
                         }
