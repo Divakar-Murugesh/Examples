@@ -4,14 +4,14 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.example.R
-import kotlinx.android.synthetic.main.activity_image_preview.*
+import kotlinx.android.synthetic.main.activity_data_preview.*
 
 
-class ImagePreviewActivity : AppCompatActivity() {
+class DataPreviewActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_image_preview)
+        setContentView(R.layout.activity_data_preview)
 
         val value: String? = intent.getStringExtra("KEY")
 

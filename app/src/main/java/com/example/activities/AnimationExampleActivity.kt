@@ -112,7 +112,7 @@ class AnimationExampleActivity : AppCompatActivity() {
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
                 options = ActivityOptions.makeSceneTransitionAnimation(this@AnimationExampleActivity, sharedImage, "sharedImage")
             }
-            val intent = Intent(this@AnimationExampleActivity, ImagePreviewActivity::class.java)
+            val intent = Intent(this@AnimationExampleActivity, DataPreviewActivity::class.java)
             if (options != null) {
                 startActivity(intent, options.toBundle())
             } else {

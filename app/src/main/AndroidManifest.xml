@@ -22,7 +22,7 @@
         </activity>
         <activity android:name=".activities.MainActivity" />
         <activity android:name=".activities.AnimationExampleActivity" />
-        <activity android:name=".activities.ImagePreviewActivity" />
+        <activity android:name=".activities.DataPreviewActivity" />
         <activity android:name=".activities.AndroidUIControlsActivity" />
         <activity android:name=".activities.FragmentsActivity" />
     </application>

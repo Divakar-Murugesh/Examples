@@ -140,7 +140,7 @@ class MainActivity : AppCompatActivity() {
                         .setCancelable(false)
                         .setAdapter(ListViewAdapter(this@MainActivity, models)) { dialog, position ->
                             // on item click...
-                            val intent = Intent(this@MainActivity, ImagePreviewActivity::class.java)
+                            val intent = Intent(this@MainActivity, DataPreviewActivity::class.java)
                             intent.putExtra("KEY", models.get(position).notificationText)
                             val options = ActivityOptions.makeScaleUpAnimation(view, 0, 0, view.width, view.height)
                             startActivity(intent, options.toBundle())
